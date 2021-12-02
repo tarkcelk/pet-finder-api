@@ -2,7 +2,6 @@ const mongoose = require("mongoose"),
   user = mongoose.model("user");
 
 exports.list = function (req, res) {
-  console.log(req);
   user.find({}, function (err, task) {
     if (err) res.send(err);
     res.json(task);
@@ -10,18 +9,22 @@ exports.list = function (req, res) {
 };
 
 exports.create = function (req, res) {
-  var newUser = new user(req.body);
-  newUser.save(function (err, task) {
-    if (err) res.send(err);
-    res.json(task);
+  user.findOne({ email: req.body.email }, function (err, doc) {
+    if (doc) return res.send({ error: "Email exists , try another email" });
+
+    const newUser = new user(req.body);
+    newUser.save(function (err, user) {
+      if (err) res.send(err);
+      res.json(user);
+    });
   });
 };
 
 exports.getById = function (req, res) {
   const id = req?.params?.id;
-  user.findById(id, function (err, task) {
+  user.findById(id, function (err, user) {
     if (err) res.send(err);
-    res.json(task);
+    res.json(user);
   });
 };
 

@@ -3,7 +3,6 @@ var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
 var user = new Schema({
-  _id: Object,
   nameSurname: {
     type: String,
     required: "Kindly enter the name and surname",
