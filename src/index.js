@@ -13,6 +13,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 const routes = require("./routes");
 app.use("/api/user", routes.User);
 app.use("/api/pet", routes.Pet);
+app.use("/api/city", routes.City);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`api is running on port:${PORT}`));
