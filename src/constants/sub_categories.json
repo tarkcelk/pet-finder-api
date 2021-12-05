@@ -1,0 +1,32 @@
+[
+  {
+    "value": 1,
+    "label": "Pug",
+    "parent_category_id": 1
+  },
+  {
+    "value": 2,
+    "label": "Pitbull",
+    "parent_category_id": 1
+  },
+  {
+    "value": 3,
+    "label": "Golden Retriever",
+    "parent_category_id": 1
+  },
+  {
+    "value": 4,
+    "label": "Bulldog",
+    "parent_category_id": 1
+  },
+  {
+    "value": 5,
+    "label": "Van",
+    "parent_category_id": 2
+  },
+  {
+    "value": 6,
+    "label": "Sfenks",
+    "parent_category_id": 2
+  }
+]

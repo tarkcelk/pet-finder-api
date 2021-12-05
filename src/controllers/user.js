@@ -1,5 +1,6 @@
 const mongoose = require("mongoose"),
   user = mongoose.model("user"),
+  mongodb = require("mongodb"),
   { apiResponse } = require("../utils");
 
 exports.list = function (req, res) {
@@ -21,6 +22,7 @@ exports.create = function (req, res) {
         );
 
     const newUser = new user(req.body);
+    newUser._id = new mongodb.ObjectId();
     newUser.save(function (err, user) {
       if (err) res.status(400).send(err);
       console.log(err);
@@ -51,9 +53,12 @@ exports.update = function (req, res) {
 
 exports.login = function (req, res) {
   const { email, password } = req.body;
-  console.log(req.body);
   user.findOne({ email, password }, function (err, user) {
-    if (err) res.send(err);
+    if (err) return res.send(err);
+    if (!user)
+      return res
+        .status(404)
+        .send(apiResponse.onError("Email veya şifre yanlış tekrar deneyiniz."));
     res.json(user);
   });
 };

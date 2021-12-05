@@ -3,6 +3,7 @@ var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
 var pet = new Schema({
+  _id: mongoose.SchemaTypes.ObjectId,
   name: {
     type: String,
     required: "Kindly enter the name",
@@ -17,6 +18,10 @@ var pet = new Schema({
   age: {
     type: Number,
     required: "Kindly enter the age",
+  },
+  about: {
+    type: String,
+    required: "Kindly enter the about",
   },
   imageUri: {
     type: String,

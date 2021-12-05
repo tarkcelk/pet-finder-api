@@ -14,6 +14,8 @@ const routes = require("./routes");
 app.use("/api/user", routes.User);
 app.use("/api/pet", routes.Pet);
 app.use("/api/city", routes.City);
+app.use("/api/category", routes.Category);
+app.use(express.static("public"));
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`api is running on port:${PORT}`));

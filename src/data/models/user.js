@@ -3,7 +3,7 @@ var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
 var user = new Schema({
-  // _id: Object,
+  _id: mongoose.SchemaTypes.ObjectId,
   name: {
     type: String,
     required: "Kindly enter the name",
@@ -27,6 +27,9 @@ var user = new Schema({
   city_id: {
     type: Number,
     required: "Kindy enter the city",
+  },
+  favorites: {
+    type: mongoose.SchemaTypes.Array,
   },
 });
 
