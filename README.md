@@ -1,5 +1,5 @@
 ## Pet Finder Application
-A sample **NodeJS API** that can help to donate a pet or adopt. This project is api service of **pet-finder** application.
+A sample **NodeJS API** that can help to donate a pet or adopt. This project is api service of [**pet-finder**](https://github.com/tarkcelk/pet-finder) application.
 
 
 ### Utilities
